@@ -1,0 +1,30 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.5;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.tvShowsApp {
+  padding: 1rem;
+}
+
+.episode-card {
+  display: grid;
+  background-color: antiquewhite;
+  text-align: center;
+  font-size: 12px;
+  border: 1rem;
+}
