@@ -3,7 +3,7 @@ export default function EpisodeCard(props) {
     <div className="episode-card">
       <h1>{props.epTitle}-{props.season + props.episodeNum}</h1>
       <img src={props.episodeMedImg}/>
-      <p>{props.epSum}</p>
+      <p>{props.epSum.slice(3, -4)}</p>
     </div>
   );
 }
