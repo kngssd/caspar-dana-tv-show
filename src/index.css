@@ -22,9 +22,14 @@ select {
 }
 
 .episode-card {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   background-color: antiquewhite;
   text-align: center;
   font-size: 12px;
   border: 1rem;
+}
+
+.episode-cards {
+  display: flexbox;
 }
