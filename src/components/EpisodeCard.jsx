@@ -1,3 +1,5 @@
+import removePTags from "./removePTags";
+
 export default function EpisodeCard(props) {
   function episodeCode(episodeNum, season) {
     const formattedEpNum = episodeNum.toLocaleString("en-US", {
@@ -18,8 +20,8 @@ export default function EpisodeCard(props) {
       <h1>
         {props.epTitle}-{episodeCode(props.episodeNum, props.season)}
       </h1>
-      <img src={props.episodeMedImg} />
-      <p>{props.epSum.slice(3, -4)}</p>
+      {props.episodeImages !== null && <img src={props.episodeImages.medium} />}
+      {props.epSum !== null && <p>{removePTags(props.epSum)}</p>}
     </div>
   );
 }

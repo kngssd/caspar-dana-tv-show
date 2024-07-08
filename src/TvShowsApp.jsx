@@ -1,15 +1,15 @@
 import React from "react";
-import episodes from "./data/gameOfThronesEpisodes.json";
+import episodes from "./data/mythBustersEpisodes.json";
 import EpisodeCard from "./components/EpisodeCard";
 import isInNameOrSum from "./components/isInNameOrSum";
 
 export default function TVShowsApp() {
+  const [episodesToDisplay, setEpisodesToDisplay] = React.useState(episodes);
 
-  const [episodesToDisplay, setEpisodesToDisplay] =
-    React.useState(episodes);
-
-  function handleSearch(event){
-    setEpisodesToDisplay(episodes.filter((episode) => isInNameOrSum(episode, event.target.value)))
+  function handleSearch(event) {
+    setEpisodesToDisplay(
+      episodes.filter((episode) => isInNameOrSum(episode, event.target.value))
+    );
   }
 
   const episodeCards = episodesToDisplay.map((episode) => (
@@ -18,7 +18,7 @@ export default function TVShowsApp() {
       epTitle={episode.name}
       season={episode.season}
       episodeNum={episode.number}
-      episodeMedImg={episode.image.medium}
+      episodeImages={episode.image}
       epSum={episode.summary}
     />
   ));
